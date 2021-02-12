@@ -3,11 +3,17 @@ cmake_minimum_required(VERSION 3.10)
 # set the project name and version
 project(Tutorial VERSION 1.0)
 
+# specify the C++ standard
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# allow version to be injected into the executable
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 
 # add the executable
 add_executable(Tutorial tutorial.cxx)
 
+# set up which directories will be 
 target_include_directories(Tutorial PUBLIC
-                           /cmake/
+                           "${PROJECT_BINARY_DIR}"
                            )

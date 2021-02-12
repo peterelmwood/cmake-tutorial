@@ -7,6 +7,7 @@
 
 using std::cout;
 using std::endl;
+using std::stod;
 
 int main(int argc, char *argv[])
 {
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
     }
 
     // convert input to double
-    const double inputValue = atof(argv[1]);
+    const double inputValue = stod(argv[1]);
 
     // calculate square root
     const double outputValue = sqrt(inputValue);
