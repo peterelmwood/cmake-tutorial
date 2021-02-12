@@ -6,3 +6,5 @@ Makefile
 
 # ignore the executable that is generated
 Tutorial
+TutorialConfig.h
+*_build/
