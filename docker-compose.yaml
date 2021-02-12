@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  cmake:
+    build:
+      context: .
+      dockerfile: DockerFile.local
+    volumes:
+      - .:/cmake # maps host directory to internal container directory (this is used for local development)
+    tty: true
