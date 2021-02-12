@@ -3,6 +3,10 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include "TutorialConfig.h"
+
+using std::cout;
+using std::endl;
 
 int main(int argc, char *argv[])
 {
