@@ -11,7 +11,7 @@ STEP=$1
 BUILD_DIR=/cmake/step${STEP}_build
 STEP_DIR=/cmake/Step${STEP}
 
-[ ! -d $BUILD_DIR ] && echo "Step number does not exist" && exit -1
+[ ! -d $STEP_DIR ] && echo "Step number does not exist" && exit -1
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
