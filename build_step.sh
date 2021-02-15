@@ -9,6 +9,10 @@ if [[ -z "$1" ]] ; then
     exit -1
 fi
 
+STEP=$1
+BUILD_DIR=/cmake/step${STEP}_build
+STEP_DIR=/cmake/Step${STEP}
+
 # set default of 2 to sqrt if value not provided by user
 if [[ -z "$2" ]] ; then
     echo "No number supplied to take sqrt of. Using 2."
@@ -17,11 +21,7 @@ else
     INPUT=$2
 fi
 
-STEP=$1
-
-BUILD_DIR=/cmake/step${STEP}_build
-STEP_DIR=/cmake/Step${STEP}
-
+# exit if StepN directory doesn't exist
 [ ! -d $STEP_DIR ] && echo "Step number does not exist" && exit -1
 
 RED='\033[0;31m'
