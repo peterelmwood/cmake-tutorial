@@ -2,8 +2,8 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
-BUILD_DIR=/cmake/step3_build
-STEP_DIR=/cmake/Step3
+BUILD_DIR=/cmake/step5_build
+STEP_DIR=/cmake/Step5
 
 echo "setup"
 cd /cmake/
