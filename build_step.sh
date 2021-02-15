@@ -1,5 +1,7 @@
 # usage: call script with number of step to build:
-#   `/cmake/build_step 5` # builds step 5 into /cmake/step5_build dir
+#   `/cmake/build_step 5 100` # builds step 5 $NUM into /cmake/step5_build dir
+#   and runs /cmake/step5_build/Tutorial 5 100,
+#   which should yield output `The square root of 100 is 10`.
 
 # exit bash script if no number is provided
 if [[ -z "$1" ]] ; then
@@ -7,7 +9,16 @@ if [[ -z "$1" ]] ; then
     exit -1
 fi
 
+# set default of 2 to sqrt if value not provided by user
+if [[ -z "$2" ]] ; then
+    echo "No number supplied to take sqrt of. Using 2."
+    INPUT=2
+else
+    INPUT=$2
+fi
+
 STEP=$1
+
 BUILD_DIR=/cmake/step${STEP}_build
 STEP_DIR=/cmake/Step${STEP}
 
@@ -31,7 +42,7 @@ cmake $STEP_DIR .
 cmake --build .
 OUTPUT=$(./Tutorial)
 echo -e "${GREEN}${OUTPUT}${NC}"
-OUTPUT=$(./Tutorial 100)
+OUTPUT=$(./Tutorial ${INPUT})
 echo -e "${RED}${OUTPUT}${NC}"
 
 echo -e "${CYAN}**** create executable without custom sqrt ****${NC}"
@@ -39,5 +50,5 @@ cmake $STEP_DIR -DUSE_MYMATH=OFF .
 cmake --build .
 OUTPUT=$(./Tutorial)
 echo -e "${GREEN}${OUTPUT}${NC}"
-OUTPUT=$(./Tutorial 100)
+OUTPUT=$(./Tutorial ${INPUT})
 echo -e "${RED}${OUTPUT}${NC}"
