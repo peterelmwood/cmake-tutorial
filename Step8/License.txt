@@ -1,2 +1,4 @@
 This is the open source License.txt file introduced in
 CMake/Tutorial/Step7...
+
+To accept this license, you have to be a level 7 ninja.
